@@ -1,7 +1,7 @@
  #!/bin/bash
 
 rpm --import https://packages.wazuh.com/key/GPG-KEY-WAZUH
-cat > /etc/yum.repos.d/wazuh.repo <<EOF
+cat > /etc/yum.repos.d/wazuh.repo <<\EOF
 [wazuh_repo]
 gpgcheck=1
 gpgkey=https://packages.wazuh.com/key/GPG-KEY-WAZUH
@@ -11,10 +11,10 @@ baseurl=https://packages.wazuh.com/3.x/yum/
 protect=1
 EOF
 
- yum install wazuh-manager -y
- systemctl status wazuh-manager
- systemctl start wazuh-manager
- service wazuh-manager status
+yum install wazuh-manager -y
+systemctl status wazuh-manager
+systemctl start wazuh-manager
+service wazuh-manager status
 
 
 
