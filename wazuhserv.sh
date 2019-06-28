@@ -1,7 +1,7 @@
  #!/bin/bash
 
 rpm --import https://packages.wazuh.com/key/GPG-KEY-WAZUH
-cat > /etc/yum.repos.d/wazuh.repo <<\EOF
+cat << EOF > /etc/yum.repos.d/wazuh.repo 
 [wazuh_repo]
 gpgcheck=1
 gpgkey=https://packages.wazuh.com/key/GPG-KEY-WAZUH
