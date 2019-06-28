@@ -1,7 +1,7 @@
  #!/bin/bash
 
 rpm --import https://packages.wazuh.com/key/GPG-KEY-WAZUH
-cat > /etc/yum.repos.d/wazuh.repo <<\EOF
+cat > /etc/yum.repos.d/wazuh.repo <<EOF
 [wazuh_repo]
 gpgcheck=1
 gpgkey=https://packages.wazuh.com/key/GPG-KEY-WAZUH
@@ -73,5 +73,3 @@ systemctl enable kibana.service
 systemctl start kibana.service
 
 sed -i "s/^enabled=1/enabled=0/" /etc/yum.repos.d/elastic.repo
-
-
